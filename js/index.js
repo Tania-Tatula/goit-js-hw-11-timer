@@ -34,12 +34,16 @@ class CountdownTimer {
 
   updateClockface({ days, hours, mins, secs }, selector) {
     const timerSelector = document.querySelector(`${selector}`);
-    timerSelector.querySelector('[data-value="days"]').textContent = `${days}`;
-    timerSelector.querySelector(
-      '[data-value="hours"]'
-    ).textContent = `${hours}`;
-    timerSelector.querySelector('[data-value="mins"]').textContent = `${mins}`;
-    timerSelector.querySelector('[data-value="secs"]').textContent = `${secs}`;
+    const daysSelector = timerSelector.querySelector('[data-value="days"]');
+    const hoursSelector = timerSelector.querySelector('[data-value="hours"]');
+    const minsSelector = timerSelector.querySelector('[data-value="mins"]');
+    const secsSelector =timerSelector.querySelector('[data-value="secs"]');
+
+    
+    daysSelector.textContent = `${days}`;
+    hoursSelector.textContent = `${hours}`;
+    minsSelector.textContent = `${mins}`;
+    secsSelector.textContent = `${secs}`;
   }
 }
 
@@ -49,3 +53,4 @@ const timer = new CountdownTimer({
 });
 
 timer.init();
+
